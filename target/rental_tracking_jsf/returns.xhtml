@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:c="http://java.sun.com/jsp/jstl/core"> 
+
+<h:head>
+	<link rel = "stylesheet" type = "text/css" href = "/rental_tracking_jsf/includes/rental_app.css" />
+</h:head> 
+<body>
+	<h1>Ski Bradford Rental Tracking</h1> 
+	<ui:include src="/includes/topnav.xhtml" />
+	<h2>Return Equipment</h2>
+	<c:if test="#{(transaction.equipment1Id != null)}">
+		<c:set var="transaction.equipment1Id" scope="request" value=""/>
+	</c:if>
+	<h:form id="equipmentForm">
+	<p>There are <h:outputText value="#{transactionServiceBean.nonReturnsCount()}"/> pieces of equipment currently rented out.</p>
+	<p class="center">
+	<table cellpadding="5" cellspacing="0" border="0">
+	<tr>
+		<td><h:outputLabel value="Ski/Snowboard/Boot/Helmet Identifier:" for="equipment1Id" /></td>
+		<td><h:inputText value="#{transaction.equipment1Id}" id="equipment1Id" /><br /></td>
+	</tr>
+	<tr>
+		<td colspan="2"><h:commandButton value="Submit" action="#{transactionServiceBean.addReturn}" /></td>
+	</tr>
+	</table>
+	</p>
+	</h:form>
+	<h:outputScript library="js">document.getElementById("equipmentForm:equipment1Id").focus();</h:outputScript>
+</body> 
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:c="http://java.sun.com/jsp/jstl/core"> 
+
+<h:head>
+	<link rel = "stylesheet" type = "text/css" href = "/rental_tracking_jsf/includes/rental_app.css" />
+</h:head> 
+<body> 
+	<h1>Ski Bradford Rental Tracking</h1>
+	<ui:include src="/includes/topnav.xhtml" />
+		<h2>Return Equipment</h2>
+	<c:if test="#{transactionServiceBean.errorMsg != null}">
+		<p class="warning_red"><h:outputText value="#{transactionServiceBean.errorMsg}" />!</p>
+	</c:if>
+	<c:if test="#{(transaction.equipment1Id != null) and (transactionServiceBean.errorMsg == null)}">
+		<p><h:outputText value="#{transaction.equipment1Id}" /> successfully returned.</p>
+		<p>There are <h:outputText value="#{transactionServiceBean.rentedCount}"/> pieces of equipment currently rented out.</p>
+	</c:if>
+	<script language="Javascript">setTimeout("location.assign('returns.xhtml')", 1000);</script>
+</body> 
+</html>

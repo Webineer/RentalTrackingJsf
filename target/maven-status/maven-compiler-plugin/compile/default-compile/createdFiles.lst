@@ -1,0 +1,10 @@
+com/webineering/jsf/bean/LoginBean.class
+com/webineering/jsf/bean/EquipmentMapper.class
+com/webineering/jsf/service/EquipmentService.class
+com/webineering/jsf/service/TransactionService.class
+com/webineering/jsf/service_bean/TransactionServiceBean.class
+com/webineering/jsf/bean/Equipment.class
+com/webineering/jsf/bean/Number.class
+com/webineering/jsf/service_bean/EntityManagerFactoryBean.class
+com/webineering/jsf/bean/Transaction.class
+com/webineering/jsf/service_bean/EquipmentServiceBean.class

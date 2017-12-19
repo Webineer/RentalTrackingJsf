@@ -1,0 +1,13 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:c="http://java.sun.com/jsp/jstl/core">
+<head>
+	<title>Equipment Management</title>
+</head>
+<body>
+	<h2>Add Equipment</h2>
+	<h:form>
+	<h:outputLabel value="Name:" for="equipmentName" /><h:inputText value="#{equipment.equipmentName}" id="equipmentName" /><br />
+	<h:outputLabel value="Description:" for="equipmentDescription" /><h:inputText value="#{equipment.equipmentDescription}" id="equipmentDescription" /><br />
+	<h:commandButton value="Submit" action="#{equipmentServiceBean.addEquipment}" /> 
+</h:form>
+</body>
+</html>
